@@ -24,13 +24,13 @@ Sorry, your browser does not support HTML5 audio.
 </audio>
 <div id="playlist">
 	
-${caption(page)}
+${url(page)}
 </div>
 <pre>
 ${page.title}
 ${page.broadcast_date}
 	
-${url(page)}
+${caption(page)}
 </pre>
 <a href="index.html">回到目錄</a>
 <script type="text/javascript">
