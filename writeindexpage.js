@@ -61,8 +61,10 @@ ${li_years(programme.years)}
     </nav>
   </div>
 </section>
+<section>
+  <p>${now}</p>
+</section>
         </div><!-- .fluid_container -->
-<p>${now}</p>
     <!--///////////////////////////////////////////////////////////////////////////////////////////////////
     //
     //		Scripts
