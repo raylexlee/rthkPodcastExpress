@@ -11,6 +11,7 @@ const li_years = years => years.map(year => `          <li>
 ${li_podcasts(year.podcasts)}
                    </ul>
           </li>`).join('\n');
+const now = require('./lib/gethknowtime.js')();
 const indexpage = (programme, pid) => `<!doctype html>
 <html lang="en">
   <head>
@@ -61,7 +62,7 @@ ${li_years(programme.years)}
   </div>
 </section>
         </div><!-- .fluid_container -->
-
+<p>${now}</p>
     <!--///////////////////////////////////////////////////////////////////////////////////////////////////
     //
     //		Scripts
