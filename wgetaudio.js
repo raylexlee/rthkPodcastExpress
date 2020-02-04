@@ -2,20 +2,34 @@ const fs = require('fs');
 const request = require('request');
 const Pid = '287';
 
-const sh_str = pid => {
+function _downloadFile(url, pathName) {
+    return new Promise((resolve, reject) => {
+        request.head(url, function(){
+            request(url).pipe(fs.createWriteStream(pathName))
+                .on('close', () => resolve(pathName))
+                .on('error', error =>  reject(error))
+        });
+    })
+}
+
+const downloadFiles = pid => {
 
   const Programme = require('./lib/getProgramme.js')(pid);
 
-  const wget_str = Programme.pages.map(page => {
+  Programme.pages.filter(page => page.broadcast_date === '2020-01-04').forEach(page => {
     const save_to_dir = `${page.broadcast_date}${page.title}`;
-    return `mkdir ${save_to_dir}\n` +
-      page.podcasts.map((podcast, index) => {
+    fs.mkdirSync(save_to_dir);
+    page.podcasts.forEach((podcast, index) => {
         const url = podcast.url;
-        const file = `${(index < 9) ? '0' : ''}${index + 1}${podcast.caption.replace(/\(/g, '\\(').replace(/\)/g, '\\)')}.mp3`;
-        return `curl -s -o ${save_to_dir}/${file} ${url}`;
-        }).join('\n');
-      }).join('\n');
-  return `mkdir ${Programme.name}\ncd ${Programme.name}\n${wget_str}`;
+        const file = `${(index < 9) ? '0' : ''}${index + 1}${podcast.caption}`;
+        console.log('Start download file ', `${index + 1}`); 
+        _downloadFile(url, `${save_to_dir}/${file}`)
+          .then(p => {
+            console.log('Got ', p); })
+          .catch(e => {
+            console.log(e); });
+        });
+      });
   };
 
-fs.writeFileSync(`${Pid}.sh`, sh_str(Pid));
+downloadFiles(Pid);
