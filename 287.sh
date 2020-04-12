@@ -558,3 +558,14 @@ curl -s -o 2020-01-04甘地/02\(二\)︰赴英留學.mp3 https://app3.rthk.hk/po
 curl -s -o 2020-01-04甘地/03\(三\)︰學成歸國.mp3 https://app3.rthk.hk/podcast/media/people/287_2001172317_43939.mp3
 curl -s -o 2020-01-04甘地/04\(四\)︰初到南非.mp3 https://app3.rthk.hk/podcast/media/people/287_2001230912_98061.mp3
 curl -s -o 2020-01-04甘地/05\(五\)︰南非抗爭.mp3 https://app3.rthk.hk/podcast/media/people/287_2001291419_57805.mp3
+curl -s -o 2020-01-04甘地/06\(六\)︰波耳戰爭.mp3 https://app3.rthk.hk/podcast/media/people/287_2002071915_80454.mp3
+curl -s -o 2020-01-04甘地/07\(七\)︰非暴力抗爭.mp3 https://app3.rthk.hk/podcast/media/people/287_2002141531_25864.mp3
+curl -s -o 2020-01-04甘地/08\(八\)︰重歸印度.mp3 https://app3.rthk.hk/podcast/media/people/287_2002211009_32163.mp3
+curl -s -o 2020-01-04甘地/09\(九\)︰不合作運動.mp3 https://app3.rthk.hk/podcast/media/people/287_2002282022_28403.mp3
+curl -s -o 2020-01-04甘地/10\(十\)︰步入政壇.mp3 https://app3.rthk.hk/podcast/media/people/287_2003061539_37305.mp3
+curl -s -o 2020-01-04甘地/11\(十一\)︰土布運動.mp3 https://app3.rthk.hk/podcast/media/people/287_2003131639_66619.mp3
+curl -s -o 2020-01-04甘地/12\(十二\)︰西門委員會.mp3 https://app3.rthk.hk/podcast/media/people/287_2003171621_76251.mp3
+curl -s -o 2020-01-04甘地/13\(十三\)︰退下前線.mp3 https://app3.rthk.hk/podcast/media/people/287_2003271755_64666.mp3
+curl -s -o 2020-01-04甘地/14\(十四\)︰印度獨立.mp3 https://app3.rthk.hk/podcast/media/people/287_2004031548_49088.mp3
+mkdir 2020-04-11中唐文豪
+curl -s -o 2020-04-11中唐文豪/01\(一\)︰涇原兵變.mp3 https://app3.rthk.hk/podcast/media/people/287_2004081236_80613.mp3
