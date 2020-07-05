@@ -569,3 +569,16 @@ curl -s -o 2020-01-04甘地/13\(十三\)︰退下前線.mp3 https://app3.rthk.hk
 curl -s -o 2020-01-04甘地/14\(十四\)︰印度獨立.mp3 https://app3.rthk.hk/podcast/media/people/287_2004031548_49088.mp3
 mkdir 2020-04-11中唐文豪
 curl -s -o 2020-04-11中唐文豪/01\(一\)︰涇原兵變.mp3 https://app3.rthk.hk/podcast/media/people/287_2004081236_80613.mp3
+curl -s -o 2020-04-11中唐文豪/02\(二\)︰唐代科舉.mp3 https://app3.rthk.hk/podcast/media/people/287_2004141721_34561.mp3
+curl -s -o 2020-04-11中唐文豪/03\(三\)︰韓愈入仕.mp3 https://app3.rthk.hk/podcast/media/people/287_2004231024_65541.mp3
+curl -s -o 2020-04-11中唐文豪/04\(四\)︰元稹與崔鶯鶯.mp3 https://app3.rthk.hk/podcast/media/people/287_2005041414_10744.mp3
+curl -s -o 2020-04-11中唐文豪/05\(五\)︰永貞內禪.mp3 https://app3.rthk.hk/podcast/media/people/287_2005071458_40374.mp3
+curl -s -o 2020-04-11中唐文豪/06\(六\)︰武元衡案.mp3 https://app3.rthk.hk/podcast/media/people/287_2005141055_91481.mp3
+curl -s -o 2020-04-11中唐文豪/07\(七\)︰平定淮西.mp3 https://app3.rthk.hk/podcast/media/people/287_2005211743_25358.mp3
+curl -s -o 2020-04-11中唐文豪/08\(八\)︰元和中興.mp3 https://app3.rthk.hk/podcast/media/people/287_2005291848_80559.mp3
+curl -s -o 2020-04-11中唐文豪/09\(九\)︰藩鎮再叛.mp3 https://app3.rthk.hk/podcast/media/people/287_2006051503_80278.mp3
+curl -s -o 2020-04-11中唐文豪/10\(十\)︰郭太后臨朝.mp3 https://app3.rthk.hk/podcast/media/people/287_2006161154_27172.mp3
+curl -s -o 2020-04-11中唐文豪/11\(十一\)︰牛李黨爭.mp3 https://app3.rthk.hk/podcast/media/people/287_2006161154_70632.mp3
+curl -s -o 2020-04-11中唐文豪/12\(十二\)︰甘露之變.mp3 https://app3.rthk.hk/podcast/media/people/287_2006231201_87837.mp3
+mkdir 2020-07-04約翰．甘迺迪
+curl -s -o 2020-07-04約翰．甘迺迪/01\(一\)︰北美洲的愛爾蘭人.mp3 https://app3.rthk.hk/podcast/media/people/287_2007040027_83792.mp3
