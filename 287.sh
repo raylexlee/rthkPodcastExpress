@@ -582,3 +582,10 @@ curl -s -o 2020-04-11中唐文豪/11\(十一\)︰牛李黨爭.mp3 https://app3.r
 curl -s -o 2020-04-11中唐文豪/12\(十二\)︰甘露之變.mp3 https://app3.rthk.hk/podcast/media/people/287_2006231201_87837.mp3
 mkdir 2020-07-04約翰．甘迺迪
 curl -s -o 2020-07-04約翰．甘迺迪/01\(一\)︰北美洲的愛爾蘭人.mp3 https://app3.rthk.hk/podcast/media/people/287_2007040027_83792.mp3
+curl -s -o 2020-07-04約翰．甘迺迪/02\(二\)︰二戰時期的國際角力.mp3 https://app3.rthk.hk/podcast/media/people/287_2007091029_79233.mp3
+curl -s -o 2020-07-04約翰．甘迺迪/03\(三\)︰麥卡錫主義.mp3 https://app3.rthk.hk/podcast/media/people/287_2007150934_35426.mp3
+curl -s -o 2020-07-04約翰．甘迺迪/04\(四\)︰艾森豪執政.mp3 https://app3.rthk.hk/podcast/media/people/287_2007231449_70777.mp3
+curl -s -o 2020-07-04約翰．甘迺迪/05\(五\)︰聲望日隆.mp3 https://app3.rthk.hk/podcast/media/people/287_2007291609_94043.mp3
+curl -s -o 2020-07-04約翰．甘迺迪/06\(六\)︰競選總統.mp3 https://app3.rthk.hk/podcast/media/people/287_2008061630_47946.mp3
+curl -s -o 2020-07-04約翰．甘迺迪/07\(七\)︰柏林危機.mp3 https://app3.rthk.hk/podcast/media/people/287_2008101617_56694.mp3
+curl -s -o 2020-07-04約翰．甘迺迪/08\(八\)︰豬灣事件.mp3 https://app3.rthk.hk/podcast/media/people/287_2008101617_58823.mp3
