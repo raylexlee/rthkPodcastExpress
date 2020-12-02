@@ -589,3 +589,18 @@ curl -s -o 2020-07-04約翰．甘迺迪/05\(五\)︰聲望日隆.mp3 https://app
 curl -s -o 2020-07-04約翰．甘迺迪/06\(六\)︰競選總統.mp3 https://app3.rthk.hk/podcast/media/people/287_2008061630_47946.mp3
 curl -s -o 2020-07-04約翰．甘迺迪/07\(七\)︰柏林危機.mp3 https://app3.rthk.hk/podcast/media/people/287_2008101617_56694.mp3
 curl -s -o 2020-07-04約翰．甘迺迪/08\(八\)︰豬灣事件.mp3 https://app3.rthk.hk/podcast/media/people/287_2008101617_58823.mp3
+curl -s -o 2020-07-04約翰．甘迺迪/09\(九\)︰古巴導彈危機.mp3 https://app3.rthk.hk/podcast/media/people/287_2008281826_19095.mp3
+curl -s -o 2020-07-04約翰．甘迺迪/10\(十\)︰越南衝突.mp3 https://app3.rthk.hk/podcast/media/people/287_2009031626_49282.mp3
+curl -s -o 2020-07-04約翰．甘迺迪/11\(十一\)︰遇刺身亡.mp3 https://app3.rthk.hk/podcast/media/people/287_2009081625_80291.mp3
+curl -s -o 2020-07-04約翰．甘迺迪/12\(十二\)︰世紀之謎.mp3 https://app3.rthk.hk/podcast/media/people/287_2009151822_23822.mp3
+mkdir 2020-09-26梁武帝
+curl -s -o 2020-09-26梁武帝/01\(一\)︰蘭陵蕭氏.mp3 https://app3.rthk.hk/podcast/media/people/287_2009230931_21784.mp3
+curl -s -o 2020-09-26梁武帝/02\(二\)︰東晉偏安.mp3 https://app3.rthk.hk/podcast/media/people/287_2009301619_60487.mp3
+curl -s -o 2020-09-26梁武帝/03\(三\)︰北府兵起.mp3 https://app3.rthk.hk/podcast/media/people/287_2010071624_49909.mp3
+curl -s -o 2020-09-26梁武帝/04\(四\)︰劉裕篡晉.mp3 https://app3.rthk.hk/podcast/media/people/287_2010161603_26250.mp3
+curl -s -o 2020-09-26梁武帝/05\(五\)︰蕭道成稱帝.mp3 https://app3.rthk.hk/podcast/media/people/287_2010231948_40708.mp3
+curl -s -o 2020-09-26梁武帝/06\(六\)︰蕭齊內鬥.mp3 https://app3.rthk.hk/podcast/media/people/287_2010302220_55997.mp3
+curl -s -o 2020-09-26梁武帝/07\(七\)︰推崇文教.mp3 https://app3.rthk.hk/podcast/media/people/287_2011071634_64556.mp3
+curl -s -o 2020-09-26梁武帝/08\(八\)︰皈依佛教.mp3 https://app3.rthk.hk/podcast/media/people/287_2011132345_49517.mp3
+curl -s -o 2020-09-26梁武帝/09\(九\)︰政制改革.mp3 https://app3.rthk.hk/podcast/media/people/287_2011202355_72153.mp3
+curl -s -o 2020-09-26梁武帝/10\(十\)︰太子早逝.mp3 https://app3.rthk.hk/podcast/media/people/287_2011272013_60450.mp3
