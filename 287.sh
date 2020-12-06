@@ -604,3 +604,4 @@ curl -s -o 2020-09-26梁武帝/07\(七\)︰推崇文教.mp3 https://app3.rthk.hk
 curl -s -o 2020-09-26梁武帝/08\(八\)︰皈依佛教.mp3 https://app3.rthk.hk/podcast/media/people/287_2011132345_49517.mp3
 curl -s -o 2020-09-26梁武帝/09\(九\)︰政制改革.mp3 https://app3.rthk.hk/podcast/media/people/287_2011202355_72153.mp3
 curl -s -o 2020-09-26梁武帝/10\(十\)︰太子早逝.mp3 https://app3.rthk.hk/podcast/media/people/287_2011272013_60450.mp3
+curl -s -o 2020-09-26梁武帝/11\(十一\)︰侯景之亂.mp3 https://app3.rthk.hk/podcast/media/people/287_2012052022_31478.mp3
