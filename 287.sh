@@ -637,3 +637,6 @@ curl -s -o 2021-05-22岸信介/03\(三\)︰初入仕途.mp3 https://podcasts.rth
 curl -s -o 2021-05-22岸信介/04\(四\)︰偽滿高官.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2106081832_53534.mp3
 curl -s -o 2021-05-22岸信介/05\(五\)︰首度入閣.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2106182209_56843.mp3
 curl -s -o 2021-05-22岸信介/06\(六\)︰推倒東條.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2106240935_87731.mp3
+curl -s -o 2021-05-22岸信介/07\(七\)︰甲級戰犯.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2106301622_39905.mp3
+curl -s -o 2021-05-22岸信介/08\(八\)︰東山再起.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2107061719_22821.mp3
+curl -s -o 2021-05-22岸信介/09\(九\)︰當選議員.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2107131804_73574.mp3
