@@ -640,3 +640,6 @@ curl -s -o 2021-05-22岸信介/06\(六\)︰推倒東條.mp3 https://podcasts.rth
 curl -s -o 2021-05-22岸信介/07\(七\)︰甲級戰犯.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2106301622_39905.mp3
 curl -s -o 2021-05-22岸信介/08\(八\)︰東山再起.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2107061719_22821.mp3
 curl -s -o 2021-05-22岸信介/09\(九\)︰當選議員.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2107131804_73574.mp3
+curl -s -o 2021-05-22岸信介/10\(十\)︰成為首相.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2107210934_65487.mp3
+curl -s -o 2021-05-22岸信介/11\(十一\)︰政治顛峰.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2108031508_86630.mp3
+curl -s -o 2021-05-22岸信介/12\(十二\)︰辭職下台.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2108031512_33794.mp3
