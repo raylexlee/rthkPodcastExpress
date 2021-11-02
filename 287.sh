@@ -643,3 +643,16 @@ curl -s -o 2021-05-22岸信介/09\(九\)︰當選議員.mp3 https://podcasts.rth
 curl -s -o 2021-05-22岸信介/10\(十\)︰成為首相.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2107210934_65487.mp3
 curl -s -o 2021-05-22岸信介/11\(十一\)︰政治顛峰.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2108031508_86630.mp3
 curl -s -o 2021-05-22岸信介/12\(十二\)︰辭職下台.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2108031512_33794.mp3
+mkdir 2021-08-14司馬光王安石
+curl -s -o 2021-08-14司馬光王安石/01\(一\)︰北宋積弊.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2108132000_42931.mp3
+curl -s -o 2021-08-14司馬光王安石/02\(二\)︰英宗即位.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2108181142_72689.mp3
+curl -s -o 2021-08-14司馬光王安石/03\(三\)︰濮議之爭.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2108251815_31864.mp3
+curl -s -o 2021-08-14司馬光王安石/04\(四\)︰王安石入京.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2109021745_90912.mp3
+curl -s -o 2021-08-14司馬光王安石/05\(五\)︰王安石拜相.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2109091358_90160.mp3
+curl -s -o 2021-08-14司馬光王安石/06\(六\)：熙寧變法.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2109161859_19065.mp3
+curl -s -o 2021-08-14司馬光王安石/07\(七\)：王安石罷相.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2109241703_46813.mp3
+curl -s -o 2021-08-14司馬光王安石/08\(八\)：資治通鑑.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2110021728_82654.mp3
+curl -s -o 2021-08-14司馬光王安石/09\(九\)：新舊黨爭.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2110061011_29707.mp3
+curl -s -o 2021-08-14司馬光王安石/10\(十\)：變法成敗.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2110211009_68726.mp3
+mkdir 2021-10-30戴高樂
+curl -s -o 2021-10-30戴高樂/01\(一\)︰最偉大的法國人.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2110281434_83930.mp3
