@@ -656,3 +656,30 @@ curl -s -o 2021-08-14司馬光王安石/09\(九\)：新舊黨爭.mp3 https://pod
 curl -s -o 2021-08-14司馬光王安石/10\(十\)：變法成敗.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2110211009_68726.mp3
 mkdir 2021-10-30戴高樂
 curl -s -o 2021-10-30戴高樂/01\(一\)︰最偉大的法國人.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2110281434_83930.mp3
+curl -s -o 2021-10-30戴高樂/02\(二\)︰普法戰爭.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2111081006_55189.mp3
+curl -s -o 2021-10-30戴高樂/03\(三\)︰法蘭西第三共和.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2111121943_59604.mp3
+curl -s -o 2021-10-30戴高樂/04\(四\)︰中法戰爭.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2111192113_83111.mp3
+curl -s -o 2021-10-30戴高樂/05\(五\)︰第一次世界大戰.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2111271836_34148.mp3
+curl -s -o 2021-10-30戴高樂/06\(六\)︰民族主義.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2112041316_60532.mp3
+curl -s -o 2021-10-30戴高樂/07\(七\)︰軍隊改革.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2112110020_41953.mp3
+curl -s -o 2021-10-30戴高樂/08\(八\)︰防禦德國.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2112171722_78424.mp3
+curl -s -o 2021-10-30戴高樂/09\(九\)︰巴黎淪陷.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2201040917_45308.mp3
+curl -s -o 2021-10-30戴高樂/10\(十\)︰自由法國.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2201040918_70541.mp3
+curl -s -o 2021-10-30戴高樂/11\(十一\)︰光復巴黎.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2201100936_18210.mp3
+curl -s -o 2021-10-30戴高樂/12\(十二\)︰辭任總理.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2201171305_86965.mp3
+curl -s -o 2021-10-30戴高樂/13\(十三\)︰殖民地獨立.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2201261101_41775.mp3
+curl -s -o 2021-10-30戴高樂/14\(十四\)︰五月風暴.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2201261117_40327.mp3
+mkdir 2022-02-12劉邦項羽
+curl -s -o 2022-02-12劉邦項羽/01\(一\)︰史記謎團.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2202161036_56376.mp3
+curl -s -o 2022-02-12劉邦項羽/02\(二\)︰呂后之謎.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2202182245_20935.mp3
+curl -s -o 2022-02-12劉邦項羽/03\(三\)︰項羽出身.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2202231409_22910.mp3
+curl -s -o 2022-02-12劉邦項羽/04\(四\)︰大澤鄉起義.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2203051114_68850.mp3
+curl -s -o 2022-02-12劉邦項羽/05\(五\)︰劉邦起兵.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2203141754_39009.mp3
+curl -s -o 2022-02-12劉邦項羽/06\(六\)︰逐鹿關中.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2203160937_56798.mp3
+curl -s -o 2022-02-12劉邦項羽/07\(七\)︰鉅鹿之戰.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2203241431_11649.mp3
+curl -s -o 2022-02-12劉邦項羽/08\(八\)︰鴻門宴.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2204020100_72176.mp3
+curl -s -o 2022-02-12劉邦項羽/09\(九\)︰西楚霸王.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2204081555_25619.mp3
+curl -s -o 2022-02-12劉邦項羽/10\(十\)︰攻陷彭城.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2204131908_21652.mp3
+curl -s -o 2022-02-12劉邦項羽/11\(十一\)︰楚漢相爭.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2204250857_12882.mp3
+curl -s -o 2022-02-12劉邦項羽/12\(十二\)︰垓下之戰.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2204280933_55727.mp3
+curl -s -o 2022-02-12劉邦項羽/13\(十三\)︰大漢統一.mp3 https://podcasts.rthk.hk/podcast/media/people/287_2205061148_24029.mp3
