@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const syncRequest = require('sync-request');
 const xpath = require('xpath');
 const dom = require('xmldom').DOMParser;
@@ -9,7 +10,8 @@ const episodesUrl = (pid, year, p) =>
   `https://podcast.rthk.hk/podcast/episodeList.php?pid=${pid}&year=${year}&page=${p}`; 
 const yearsUrl = pid => `https://podcast.rthk.hk/podcast/item.php?pid=${pid}`;  
 
-const Pid = '287';
+//const Pid = '287';
+const Pid = process.argv[2];
 
 const ProgOf = require('./lib/getprogof.js')();
 const Programme = require('./lib/getProgramme.js')(Pid);
