@@ -1,6 +1,8 @@
+#!/usr/bin/env node
 const fs = require('fs');
-const Pid = '287';
 
+//const Pid = '287';
+const Pid = process.argv[2];
 const Programme = require('./lib/getProgramme.js')(Pid);
 
 const caption = page => page.podcasts.map(podcast => podcast.caption).join('\n');

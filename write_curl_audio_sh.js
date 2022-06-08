@@ -1,7 +1,9 @@
+#!/usr/bin/env node
 const fs = require('fs');
 const request = require('request');
-const Pid = '287';
 
+//const Pid = '287';
+const Pid = process.argv[2];
 const sh_str = pid => {
 
   const Programme = require('./lib/getProgramme.js')(pid);
