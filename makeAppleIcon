@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+CODE=${1?"Missing program code such 287, 2025 or 1893 ..."}
+convert $HOME/rthkPodcastExpress/1400x1400_$CODE.jpg -resize 152x152 apple-touch-icon.png
