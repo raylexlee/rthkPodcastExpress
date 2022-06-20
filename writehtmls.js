@@ -7,24 +7,22 @@ const Programme = require('./lib/getProgramme.js')(Pid);
 
 const caption = page => page.podcasts.map((podcast, index) => `${index + 1}. ${podcast.caption}`).join('\n');
 const url = page => page.podcasts.map((podcast, index) => `<div><a href="${podcast.url}">${index + 1}</a></div>`).join('\n');
-const media = page => {
-  const link = page.podcasts[0].url;
-  if (link.endsWith('mp4')) return `<video id="audio"   width="640" height="480" controls>
+const media = {};
+media['mp4'] = `<video id="audio"   width="640" height="480" controls>
   <source src="" type="video/mp4">
   Your browser does not support the video tag.
   </video>
 `;
-  if (link.endsWith('mp3')) return `<audio id="audio" preload="auto" tabindex="0" controls="">
+media['mp3'] = `<audio id="audio" preload="auto" tabindex="0" controls="">
 <source type="audio/mp3" src="">
 Sorry, your browser does not support HTML5 audio.
 </audio>
 `;
-  if (link.endsWith('m4a')) return `<audio id="audio" preload="auto" tabindex="0" controls="">
+media['m4a'] = `<audio id="audio" preload="auto" tabindex="0" controls="">
 <source type="audio/x-m4a" src="">
 Sorry, your browser does not support HTML5 audio.
 </audio>
 `;
-};
 const html = page => `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +36,7 @@ const html = page => `<!DOCTYPE html>
 <link rel="stylesheet" href="podcast.css">
 </head>
 <body>
-${media(page)}
+${media[page.podcasts[0].url.slice(-3)]}
 <div id="playlist">
 	
 ${url(page)}
