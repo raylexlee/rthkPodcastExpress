@@ -21,7 +21,7 @@ if (Programme['latest'] === '1900-01-01') {
 const lastLatest = Programme['latest'];
 
 const updateProgramme = (date, titleCaptions, audio) => {
-  const [title, caption] = split(date, titleCaptions, Pid);
+  const [title, caption] = split(date, titleCaptions, Pid, ProgOf[Pid]);
   const getPageIndex = title => {
     for (let i = 0; i < Programme['pages'].length; i++) {
       if (Programme['pages'][i]['title'] === title) return i;
