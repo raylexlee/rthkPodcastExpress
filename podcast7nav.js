@@ -162,7 +162,7 @@ function ProcessMenu() {
 function getLastChapter() {
   if (!localStorage.getItem('activeEpisode'+pageTitle)) {
     const start_episode = 1;
-    localStorage.setItem('activeEpisode'+title,start_episode);
+    localStorage.setItem('activeEpisode'+pageTitle,start_episode);
     localStorage.setItem('currentTime'+pageTitle, 0.0);
   }
   activeEpisode = parseInt(localStorage.getItem('activeEpisode'+pageTitle));
