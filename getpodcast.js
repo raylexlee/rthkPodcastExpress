@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const syncRequest = require('sync-request');
 const xpath = require('xpath');
-const dom = require('xmldom').DOMParser;
+const dom = require('@xmldom/xmldom').DOMParser;
 const fs = require('fs');
 const pidJSONpath = pid => `./${pid}.json`;
 const split = require('./lib/split.js');
