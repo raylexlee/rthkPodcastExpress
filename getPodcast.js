@@ -1,19 +1,12 @@
 #!/usr/bin/env node
-const syncRequest = require('sync-request');
-const xpath = require('xpath');
-const dom = require('@xmldom/xmldom').DOMParser;
 const fs = require('fs');
 const pidJSONpath = pid => `./${pid}.json`;
 const split = require('./lib/split.js');
 
-const episodesUrl = (pid, year, p) =>  
-  `https://podcast.rthk.hk/podcast/episodeList.php?pid=${pid}&year=${year}&page=${p}`; 
-const yearsUrl = pid => `https://podcast.rthk.hk/podcast/item.php?pid=${pid}`;  
-
 //const Pid = '287';
 const Pid = process.argv[2];
 
-const ProgOf = require('./lib/getprogof.js')();
+const ProgOf = require('./lib/getProgOf.js')();
 const Programme = require('./lib/getProgramme.js')(Pid);
 if (Programme['latest'] === '1900-01-01') {
   Programme['name'] = ProgOf[Pid];
@@ -42,39 +35,15 @@ const updateProgramme = (date, titleCaptions, audio) => {
   Programme['pages'][pageIndex]['episodes']++;     
 };
 
-const years = pid => syncRequest('GET', yearsUrl(pid))
-  .getBody('utf8')
-  .split('\n')
-  .filter(line => /option value=/.test(line))
-  .map(line =>  /(\d{4})/.exec(line)[1]);
 let hasNewEpisode = false;
+const dtm = fs.readFileSync(`./${Pid}.txt`, {encoding:'utf8', flag:'r'}).replace(/\n+$/, "").split('\n');
 
-years(Pid).filter(yr => (yr >= lastLatest.substr(0,4)))
-  .forEach(year => {
-    let p = 0, remainder = '99';
-    do {
-      p = p + 1;
-      const res = syncRequest('GET', episodesUrl(Pid, year, p));
-      const xml = res.getBody('utf8');
-      const doc = new dom().parseFromString(xml);
-      remainder = xpath.select1('/episodeList/remainder', doc).firstChild.data;
-      const dates = xpath.select('//episodeDate', doc);
-      const titleCaptions = xpath.select('//episodeTitle', doc);
-      const audios = xpath.select('//mediafile', doc);
-      for (let i = 0; i < titleCaptions.length; i++) {
-        const date = dates[i].firstChild.data;
-        if (date <= lastLatest) break;
-        if (!hasNewEpisode) hasNewEpisode = true;
-        if (Programme['latest'] === lastLatest) Programme['latest'] = date;
-        
-        const titleCaption = titleCaptions[i].firstChild.data;
-        const audio = audios[i].firstChild.data;
-        updateProgramme(date, titleCaption, audio);
-        
-        console.log(date, ' ', titleCaption, ' ', audio);
-      }
-    } while (remainder !== '0');
-  });
+dtm.forEach(e => {
+  [date, titleCaption, audio] = e.split(' '); 
+   if (!hasNewEpisode) hasNewEpisode = true;
+   if (Programme['latest'] === lastLatest) Programme['latest'] = date;
+   updateProgramme(date, titleCaption.replace(/_/g, ' '), audio);
+});
 
 if (hasNewEpisode) {
   Programme['pages'].sort((a, b) => {
