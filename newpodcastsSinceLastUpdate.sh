@@ -3,11 +3,8 @@ PID=${1?'missing pid eg 287,336'}
 OLD_PODCASTS="$PID".txt
 NEW_PODCASTS="$PID".new.txt
 cp /dev/null $NEW_PODCASTS
-OUTPUT=$OLD_PODCASTS
-[ -f $OLD_PODCASTS ] && OUTPUT=$NEW_PODCASTS
-LAST_DATE='RaylexLee'
-[ -f $OLD_PODCASTS ] && LAST_DATE=$(head -1 $OLD_PODCASTS | awk '{print $1;}')
-[ -z "$LAST_DATE" ] && LAST_DATE='RaylexLee'
+[ -f $OLD_PODCASTS ] && OUTPUT=$NEW_PODCASTS || OUTPUT=$OLD_PODCASTS
+[ -f $OLD_PODCASTS ] && LAST_DATE=$(head -1 $OLD_PODCASTS | awk '{print $1;}') || LAST_DATE='RaylexLee'
 echo $LAST_DATE
 YEARS_URL='https://podcast.rthk.hk/podcast/item.php?pid='"$PID"
 for YEAR in $(curl -s $YEARS_URL | grep 'option value=' | sed 's#.*\([0-9]\{4\}\).*#\1#')
@@ -31,3 +28,11 @@ do
         PAGE=$(expr $PAGE + 1)
     done
 done
+if [ -s $NEW_PODCASTS ]
+then
+    cat $OLD_PODCASTS >> $NEW_PODCASTS
+    mv $NEW_PODCASTS $OLD_PODCASTS
+else
+    rm $NEW_PODCASTS
+fi
+[ -f $OLD_PODCASTS ] && exit 0 || exit 1
