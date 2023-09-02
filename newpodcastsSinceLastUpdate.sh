@@ -32,7 +32,19 @@ if [ -s $NEW_PODCASTS ]
 then
     cat $OLD_PODCASTS >> $NEW_PODCASTS
     mv $NEW_PODCASTS $OLD_PODCASTS
-else
-    rm $NEW_PODCASTS
+##### new episodes for existing programme
+    exit 0
 fi
-[ -f $OLD_PODCASTS ] && exit 0 || exit 1
+rm $NEW_PODCASTS
+if [ -f $OLD_PODCASTS ]
+then
+    if [ "$LAST_DATE" = "RaylexLee" ] 
+    then
+##### first compiling existing programme
+        exit 0
+    fi
+##### no updates for existing programme
+    exit 1
+fi
+##### no such programme id
+exit 2
