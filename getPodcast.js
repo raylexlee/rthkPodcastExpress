@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+//Usage ./getPodcast.js pid
+//would generate pid.json from pid.txt
 const fs = require('fs');
 const pidJSONpath = pid => `./${pid}.json`;
 const split = require('./lib/split.js');
@@ -7,10 +9,12 @@ const split = require('./lib/split.js');
 const Pid = process.argv[2];
 
 const ProgOf = require('./lib/getProgOf.js')();
-const Programme = require('./lib/getProgramme.js')(Pid);
-if (Programme['latest'] === '1900-01-01') {
-  Programme['name'] = ProgOf[Pid];
-}
+const Programme = {
+    name: ProgOf[Pid],
+    latest: '1900-01-01',
+    pages: [],
+    years: []	  
+  };
 const lastLatest = Programme['latest'];
 
 const updateProgramme = (date, titleCaptions, audio) => {
