@@ -3,6 +3,9 @@ PROG_CODE=${1?"Missing programe code such as 287 or 2025 ..."}
 ./newpodcastsSinceLastUpdate.sh $PROG_CODE
 case $? in
 0)
+    git add $PROG_CODE.txt
+    git commit -m "Update new podcasts."
+    git push origin master
     ./getPodcast.js $PROG_CODE 
     mv $PROG_CODE.json $HOME/raylexlee.github.io/myrthk/
     cd $HOME/raylexlee.github.io/myrthk/
