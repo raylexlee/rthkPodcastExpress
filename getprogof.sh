@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 REMAINDER=99
-PAGE=3
+PAGE=1
 while [ "$REMAINDER" != "0" ]
 do
-  LIST_URL='https://podcast.rthk.hk/podcast/programmeList.php?type=audio&page='"$PAGE"'&order=stroke&lang=zh-CN'
+  LIST_URL='https://podcast.rthk.hk/podcast/programmeList.php?type=all&page='"$PAGE"'&order=stroke&lang=zh-CN'
   curl -s -o temp.xml $LIST_URL
   PAGE=$(expr $PAGE + 1)
   REMAINDER=$(xmlstarlet sel -t -v '/programmeList/remainder' temp.xml)
