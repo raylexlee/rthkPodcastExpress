@@ -7,6 +7,6 @@ const Pid = '287';
 const rawdata = fs.readFileSync(pidJSONpath(Pid));
 const People = JSON.parse(rawdata);
 People.pages.forEach(person => {
-  const cover = person.podcasts.map((e,i) => String(i+1).padStart(3,'0')+' '+e.caption+' '+e.eid).join('\n');
+  const cover = person.podcasts.map((e,i) => String(i+1).padStart(3,'0')+" '"+e.caption.replace(' ','_')+"' "+e.eid).join('\n');
   fs.writeFileSync(txtPath(person.title), cover);  
 });
