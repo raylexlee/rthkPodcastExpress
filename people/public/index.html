@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>古今風雲人物</title>
+ <link rel="stylesheet" href="radiobutton.css">
+<style>
+body { font-size: 24px; }
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: magenta;
+}
+
+.flex-container > li {
+  background-color: #f1f1f1;
+  width: 135px;
+  margin: 10px;
+  text-align: center;
+}
+ul { list-style-type: none; }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black; /* Optional: adds a dotted underline */
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Position the tooltip above the link */
+            left: 50%;
+            margin-left: -60px; /* Center the tooltip */
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+</style>
+</head>
+<body>
+<ul class="flex-container">
+</ul>
+  <div id="qrcode"></div>
+<script src="qrcode.js"></script> 
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: window.location.href,
+	width: 128,
+	height: 128,
+	colorDark : "#000000",
+	colorLight : "#ffffff",
+	correctLevel : QRCode.CorrectLevel.H
+});
+</script>  
+</body>
+ <script src="radiobutton.js"> </script>
+<script src="index.js"> </script>
+<p></p>
+</html>
