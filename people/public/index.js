@@ -23,7 +23,7 @@ document.body.onload = () => {
       const li_b = a => `<li>
     <div class="tooltip">
 <a href='${type}?title=${book[a][0]}'>${book[a][0].replace(/_/g," ")}</a>
-        <span class="tooltiptext">${a} 首播</span>
+        <span class="tooltiptext">${a.replace("_"," ")}</span>
     </div>
 </li>`;
       document.querySelector('ul').innerHTML = Object.keys(book)
