@@ -1,0 +1,16 @@
+./genTxtJson.sh 傳說時代 https://www.rthk.hk/chiculture/fivethousandyears/textversion/index.htm
+./genTxtJson.sh 商至先秦 https://www.rthk.hk/chiculture/fivethousandyears/textversion/02shan.htm
+./genTxtJson.sh 秦 https://www.rthk.hk/chiculture/fivethousandyears/textversion/03chun.htm
+./genTxtJson.sh 漢 https://www.rthk.hk/chiculture/fivethousandyears/textversion/04han.htm
+./genTxtJson.sh 三國 https://www.rthk.hk/chiculture/fivethousandyears/textversion/053country.htm
+./genTxtJson.sh 晉 https://www.rthk.hk/chiculture/fivethousandyears/textversion/06chun.htm
+./genTxtJson.sh 南北朝 https://www.rthk.hk/chiculture/fivethousandyears/textversion/07southnorth.htm
+./genTxtJson.sh 隋 https://www.rthk.hk/chiculture/fivethousandyears/textversion/08chui.htm
+./genTxtJson.sh 唐 https://www.rthk.hk/chiculture/fivethousandyears/textversion/09tong.htm
+./genTxtJson.sh 五代 https://www.rthk.hk/chiculture/fivethousandyears/textversion/105dai.htm
+./genTxtJson.sh 宋 https://www.rthk.hk/chiculture/fivethousandyears/textversion/11sung.htm
+./genTxtJson.sh 元 https://www.rthk.hk/chiculture/fivethousandyears/textversion/12yuen.htm
+./genTxtJson.sh 明 https://www.rthk.hk/chiculture/fivethousandyears/textversion/13ming.htm
+./genTxtJson.sh 清 https://www.rthk.hk/chiculture/fivethousandyears/textversion/14ching.htm
+./genTxtJson.sh 民國上半部份 https://www.rthk.hk/chiculture/fivethousandyears/textversion/15mung.htm
+./genTxtJson.sh 民國下半部份 https://www.rthk.hk/chiculture/fivethousandyears/textversion/16mung2.htm
