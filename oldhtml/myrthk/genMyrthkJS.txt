@@ -1,0 +1,6 @@
+echo const pid = { > myrthk.js
+for i in $(ls [0-9]*)
+do 
+  echo $(echo $i | tr -d .json) : [$(jq '.name' $i), $(jq '.latest' $i)], >> myrthk.js
+done
+echo } >> myrthk.js

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+<style>
+@charset "UTF-8";
+html,body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+  background-color: black;
+  color:cornsilk;
+  font-size: 25px;
+}
+a,
+a:visited {
+    color: #ffffff;
+    text-decoration: none; }
+</style>
+</head>
+
+<body>
+<div id='myContent'></div>
+</body>
+<script>
+let myContent;
+let nDigits = 3;
+let title, chapters;
+let activeEpisode;
+const querystring = location.search;
+const params = (querystring != '') ? (new URL(document.location)).searchParams : 'none';
+if (params === 'none') window.location = 'book.html?title=阿Q正傳';
+title =  params.get('title');
+title = title ? title : '阿Q正傳';
+document.addEventListener("DOMContentLoaded", function(event) {
+  myInit();
+});
+const contentUrl = chapter => `text/${title}/${chapter.substring(0,nDigits)}.txt`;
+const coverparametersUrl = `text/${title}/coverparameters.txt`;
+function myInit() {
+  myContent = document.getElementById('myContent');
+  fetch(coverparametersUrl)
+    .then(response => response.text())
+    .then(data => {
+      chapters = data.replace(/\n+$/, "").split("\n");
+      nDigits = chapters[0].indexOf(" ");      
+      const chapter = getLastChapter();
+      gotoChapter(chapter); 
+    });
+}
+function prevChapter() {
+    const idx =chapters.findIndex(c => c.startsWith(activeEpisode));
+    let i = idx - 1;
+    i = (i === -1) ? (chapters.length - 1) : i;
+    const chapter = chapters[i];
+    gotoChapter(chapter);
+}
+function nextChapter() {
+    const idx =chapters.findIndex(c => c.startsWith(activeEpisode));
+    let i = idx + 1;
+    i = (i === chapters.length) ? 0 : i;
+    const chapter = chapters[i];
+    gotoChapter(chapter);
+}
+function gotoChapter(chapter) {
+   activeEpisode = chapter.substring(0,nDigits);
+   localStorage.setItem('book_activeEpisode'+title, activeEpisode);
+   const headline=isHead => `<h5>
+     <a href="javascript:prevChapter()" style="color:cyan;">&lArr;</a> 
+     ${isHead ? chapter.substring(1 + nDigits).replace("_"," ") : '&nbsp'}
+     <a href="javascript:nextChapter()" style="color:cyan;">&rArr;</a> 
+     </h5>`;
+   document.title = `${title} ${chapter.substring(1 + nDigits)}`;
+   fetch(contentUrl(chapter))
+     .then(response => response.text())
+     .then(data => {
+       const paragraphs = data.replace(/\n+$/, "").split('\n');
+       myContent.innerHTML = `
+${headline(true)}
+${paragraphs.map(e => `<p>${e}</p>`).join('\n')}
+${headline(false)}
+`;
+     });
+}
+function getLastChapter() {
+  if (!localStorage.getItem('book_activeEpisode'+title)) {
+    const start_episode = chapters[0].substring(0,nDigits);
+    localStorage.setItem('book_activeEpisode'+title,start_episode);
+  }
+  activeEpisode = localStorage.getItem('book_activeEpisode'+title);
+  return chapters.find(c => c.startsWith(activeEpisode)); 
+}
+</script>
+</html>

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+JS=programmes.js
+echo const programme = [ > $JS
+for i in $(ls [0-9]*json)
+do
+PID=$(echo $i | tr -d .json)
+NAME=$(jq '.["name"]' $i)
+LATEST=$(jq '.["latest"]' $i)
+echo [$PID,$NAME,$LATEST],>> $JS
+done
+echo ] >> $JS
+git add $JS
+git commit -m "Update latest"
+git push origin master

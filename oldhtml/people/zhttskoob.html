@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>李潤明</title>
+  <link rel="stylesheet" href="zhttskoob.css">
+  </link>
+</head>
+
+<body>
+  <div class="viewportDiv">
+    <div class="div1">
+      <section class="navigation">
+        <div class="nav-container">
+          <div class="brand">
+            <div class="subtitle">
+              <input type="checkbox" id="myAutoplay" name="autoplay" value="autoplay" checked>
+              <label for="autoplay">自動播</label>
+              <input type="range" min="0" max="10" value="2" id="myRange">
+              <span id='myBook'></span>
+            </div>
+          </div>
+          <nav>
+            <div class="nav-mobile">
+              <a class='active' id="nav-toggle" href="#!"><span></span></a>
+            </div>
+            <ul class="nav-list">
+              <li>
+                <a href="#">選 取 章 回</a>
+                <ul class="nav-dropdown" id="myChapterList">
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+      <section>
+        <div class="grid-container">
+        <audio id='audio' src="1-hour-of-silence.mp3"></audio>
+     <a href="javascript:speak()" style="color:red;">&#9654;</a> 
+      <input type="range" min="0.5" max="2" value="0.9" step="0.1" id="rate">
+     <a href="javascript:pauseResume()" style="color:red;">&#9208;</a> 
+      <select id='myVoice'></select>
+        </div>
+      </section>
+    </div>
+    <div class="remainingDiv">
+   <p> 
+   <input type="checkbox" id="mySchedule" name="schedule" value="schedule" >
+   <label for="schedule"><span id='sleep'>45</span> min &rarr; 💤</label>
+    <input type="range" min="5" max="75" value="45" step="5" id="stop">
+   </p>
+      <textarea name="myContent" id="myContent" readonly></textarea>
+    </div>
+  </div>
+  <div id="qrcode"></div>
+<script src="qrcode.js"></script> 
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: decodeURI(window.location.href),
+	width: 128,
+	height: 128,
+	colorDark : "#ffffff",
+	colorLight : "#000000",
+	correctLevel : QRCode.CorrectLevel.H
+});
+</script>  
+<script>
+const stop = document.getElementById('stop');
+stop.onchange = () => { document.getElementById('sleep').innerText = stop.value; }
+let scheduleID = -1;
+const mySchedule = document.getElementById('mySchedule');
+mySchedule.onchange = function() {
+  if (this.checked) { 
+    scheduleStop(stop.value);
+    } else {
+    if (scheduleID == -1) return;
+    clearTimeout(scheduleID);
+    scheduleID = -1;
+  }
+}
+function scheduleStop(duration) {
+  scheduleID = setTimeout(() => { pauseResume(); mySchedule.checked = false; }, duration * 60 * 1000);
+}
+</script>
+</body>
+<script src="zhttskoob.js"></script>
+
+</html>

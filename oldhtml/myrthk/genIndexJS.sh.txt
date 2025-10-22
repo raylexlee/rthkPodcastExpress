@@ -1,0 +1,3 @@
+echo const pid = [ > index.js
+ls -l *json | awk '{print $9;}' | sed 's#\([0-9]*\).json#"\1",#' >> index.js
+echo ] >> index.js

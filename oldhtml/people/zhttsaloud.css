@@ -1,0 +1,99 @@
+@charset "UTF-8";
+html,body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+  background-color: black;
+  color:cornsilk;
+  font-size: 25px;
+}
+::backdrop {
+  backdrop-filter: blur(20px);
+}
+[popover] {
+  background-color: black;
+  color:cornsilk;
+  border=1px solid red;
+}
+[popover] div {
+  padding: 12px;
+}
+a,
+a:visited {
+    color: #ffffff;
+    text-decoration: none; }
+.viewportDiv {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+.div1{
+  background-color: black;
+  width: 100vw;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  white-space: nowrap;   /* keeps text on one line */
+  overflow: hidden;
+  text-overflow: ellipsis; /* adds "..." if text is too long */
+}
+.div1 button {
+  background-color: black; 
+  border=1px solid black;
+}
+.remainingDiv{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.remainingDiv textarea {
+  font-size: 23px;
+  color:cornsilk;
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  flex: 1;
+}
+textarea::selection {
+    color: white;
+    background: blue;
+}
+textarea::-moz-selection {
+  background: blue;
+  color: white;
+}
+.select-wrapper {
+  flex: 1;
+  max-width: 800px;      /* optional: constrain size */
+  overflow: hidden;      /* prevents content spill */
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  white-space: nowrap;   /* keeps text on one line */
+  overflow: hidden;
+  text-overflow: ellipsis; /* adds "..." if text is too long */
+  appearance: none;      /* removes default styling (optional) */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#myBookTitle {
+  color: yellow;
+}
+input[type="checkbox"] {
+  transform: scale(3); /* Adjust the scale factor as needed */
+  vertical-align: middle;           /* Aligns with the middle of the text */
+  margin-top: -5px;                 /* Adjust this value to fine-tune vertical position */
+  margin-right: 10px;
+}
+input[type="range"] {
+  transform: scale(1.2); /* Adjust the scale factor as needed */
+  vertical-align: middle;           /* Aligns with the middle of the text */
+  margin-left: 10px;
+}

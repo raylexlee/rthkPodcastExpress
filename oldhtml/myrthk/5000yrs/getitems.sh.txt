@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+while read LINE
+do
+  TEXT=$(echo $LINE | awk '{print $1;}')
+  LINK=$(echo $LINE | awk '{print $2;}')
+$HOME/wspa2zhfiction/getlinks.js $LINK | sed '/^\shttp/,+2 d' | grep mp3$ > $TEXT.txt
+done < menu.txt
+rm -rf 'C:'*

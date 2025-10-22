@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcasts</title>
+<script src="programmes.js"></script>
+<style>
+body {
+  background-color: black;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+}
+
+.flex-container > li {
+  background-color: black;
+  width: 280px;
+  margin: 10px;
+  text-align: left;
+}
+ul { list-style-type: none; }
+    img {
+      border: 0;
+      border-radius: 3vmin;
+      padding: .3vmin;
+      object-fit: contain;
+    }
+
+    img:hover {
+      transform: scaleX(-1);
+    }
+    a, a:visited {
+      text-decoration: none;
+      color: cyan;
+    }
+</style>
+</head>
+<body>
+<ul class="flex-container">
+</ul>
+</body>
+<script>
+const plink = pid => (pid == 336) ? '5000yrs/' : `podcast.html?prog=${pid}`;
+const cover = p => `https://podcast.rthk.hk/podcast/upload_photo/item_photo/170x170_${p}.jpg`;   
+const li_a = e => `
+<li><a href="${plink(e[0])}"><img src="${cover(e[0])}" style="float:left;width:70px;height:70px;"> ${e[1]}<br />${e[2]}</a></li>
+`;    
+document.querySelector('ul').innerHTML= programme
+.sort((a, b) => (a[2] > b[2]) ? -1 : ((a[2] == b[2]) ? 0 : 1))
+.map(e => li_a(e)).join('\n');
+</script>
+</html>

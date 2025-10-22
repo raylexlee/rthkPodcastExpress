@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>李潤明</title>
+<style>
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: green;
+}
+
+.flex-container > li {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+}
+ul { list-style-type: none; }
+</style>
+</head>
+<body>
+<ul class="flex-container">
+
+<li><a href="bkindex.html">回到主目錄</a></li>
+</ul>
+  <div id="qrcode"></div>
+<script src="qrcode.js"></script> 
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: window.location.href,
+	width: 128,
+	height: 128,
+	colorDark : "#000000",
+	colorLight : "#ffffff",
+	correctLevel : QRCode.CorrectLevel.H
+});
+</script>  
+</body>
+<script>
+const querystring = location.search;
+const params = (querystring != '') ? (new URL(document.location)).searchParams : 'none';
+if (params === 'none') window.location = '/';
+document.title =  params.get('author');
+document.addEventListener("DOMContentLoaded", function(event) {
+  myInit();
+});
+function myInit() {
+  fetch(`pairs.txt`)
+    .then(response => response.text())
+    .then(data => {
+      const AuthorBooks = data.replace(/\n+$/, "").split('\n');
+      const book = {};
+      AuthorBooks.forEach(AuthorBook => {
+        const [Author, Book] = AuthorBook.split(" ");
+        if (Author in book) {
+          book[Author].push(Book);
+        } else {  
+            book[Author] = [ Book ];
+          }
+      });
+      const li_a = a => `<li><a href='qbook.html?title=${a}'>${a.replace(/_/g," ")}</a></li>`;
+      document.querySelector('ul').innerHTML = book[document.title].map(e => li_a(e)).join('\n');
+      const b = document.getElementsByTagName('a');
+      for (i=0; i < b.length; i++) {
+        b[i].href = `${b[i].href}&caller=${document.title}`;
+      }
+    });
+}
+</script></html>

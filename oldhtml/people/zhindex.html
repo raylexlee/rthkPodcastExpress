@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>明之選</title>
+<style>
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: magenta;
+}
+
+.flex-container > li {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+}
+ul { list-style-type: none; }
+</style>
+</head>
+<body>
+<ul class="flex-container">
+</ul>
+  <div id="qrcode"></div>
+<script src="qrcode.js"></script> 
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: window.location.href,
+	width: 128,
+	height: 128,
+	colorDark : "#000000",
+	colorLight : "#ffffff",
+	correctLevel : QRCode.CorrectLevel.H
+});
+</script>  
+</body>
+<script>
+  fetch(`pairs.txt`)
+    .then(response => response.text())
+    .then(data => {
+      const AuthorBooks = data.replace(/\n+$/, "").split('\n');
+      const book = {};
+      AuthorBooks.forEach(AuthorBook => {
+        const [Author, Book] = AuthorBook.split(" ");
+        if (Author in book) {
+          book[Author].push(Book);
+        } else {  
+            book[Author] = [ Book ];
+          }
+      });
+      const li_a = a => `<li><a href='zhgroup.html?author=${a}'>${a.replace(/_/g," ")}</a></li>`;
+      const li_b = a => `<li><a href='zhttsbook.html?title=${a}'>${a.replace(/_/g," ")}</a></li>`;
+      document.querySelector('ul').innerHTML = Object.keys(book)
+        .map(e => (book[e].length === 1) ? li_b(book[e][0]) : li_a(e)).join('\n');
+    });
+</script>
+<p>為獲得最佳語音效果，請使用最新版本的 Microsoft Edge。其他瀏覽器可能適用, 特別是 ios 和 android 設備。詳情請參考 Web Speech API 的 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#speechsynthesis_2">SpeechSynthesis</a>。</p>
+<p><a href="bkindex.html">純文字版</a></p>
+<p><a href="kbindex.html">新語音版</a></p>
+</html>
