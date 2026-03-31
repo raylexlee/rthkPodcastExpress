@@ -142,15 +142,6 @@ const  myFootline = document.getElementById('myFootline');
   } else {
     myFootline.style.display = 'none';
   }
-  myContent.onselect = e => {
-    for (let i = 0; i < punctuationPosition.length; i++) {
-      if (punctuationPosition[i] >= myContent.selectionStart) {
-         positionIndex = i;
-         speak();
-         break;
-      }
-    }
-  }
   myRange.oninput = function() {
     const v = myRange.value;
     myContent.style.fontSize = `${20 + parseInt(v)}px`;
@@ -196,7 +187,7 @@ async function gotoChapter(chapter, PleaseSpeak = true) {
    //activeEpisode = parseInt(chapter.substring(0,3));
    activeEpisode = chapter.substring(0,nDigits);
    localStorage.setItem('wspa_activeEpisode'+title, activeEpisode);
-   myBook.innerHTML = title.replaceAll('_',' ');
+   myBook.innerText = title.replaceAll('_',' ');
    document.title = `${title.replaceAll('_',' ')} ${chapter.substring(1 + nDigits).replaceAll('_',' ')}`;
    const data = await fetchText(contentUrl(chapter))
    myContent.value = data;
@@ -315,4 +306,13 @@ function CalculateScrollData() {
     lineIndex++;
   }
   lineHeight = myContent.scrollHeight / rowsLine[rowsLine.length - 1];
+}
+function processContentSelection() {
+  for (let i = 0; i < punctuationPosition.length; i++) {
+    if (punctuationPosition[i] >= myContent.selectionStart) {
+      positionIndex = i;
+      speak();
+      break;
+    }
+  }
 }

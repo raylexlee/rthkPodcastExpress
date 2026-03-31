@@ -77,5 +77,5 @@ const ReadAloud = () => {
   lastGroup = myGroup.value;
   localStorage.setItem(lastBookStored, lastBook);
   localStorage.setItem(lastBookInGroupStored(lastGroup), lastBook);
-  window.location = `people.html?title=${myBook.value}`; 
+  window.location = `zhttsaloud.html?title=${myBook.value}`; 
 }

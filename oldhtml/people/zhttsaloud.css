@@ -5,7 +5,7 @@ html,body {
 	padding: 0;
   background-color: black;
   color:cornsilk;
-  font-size: 25px;
+  font-size: max(25px,2vw);
 }
 ::backdrop {
   backdrop-filter: blur(20px);
@@ -48,7 +48,7 @@ a:visited {
   flex-direction: column;
 }
 .remainingDiv textarea {
-  font-size: 23px;
+  font-size: max(23px,2vw);
   color:cornsilk;
   border: none;
   background-color: transparent;
