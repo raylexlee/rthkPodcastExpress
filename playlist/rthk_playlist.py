@@ -1,9 +1,10 @@
+import sys
+import time
+import requests
+from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
-import time, requests
-from bs4 import BeautifulSoup
 
 def search_programme(driver, progName):
     driver.get("https://www.rthk.hk/archive")
@@ -72,18 +73,24 @@ def generate_playlist(driver, progName):
         if meta["m3u8Link"] and meta["date"] not in seen:
             seen.add(meta["date"])
             m3u += f'#EXTINF:0, {progName} — {meta["episodeTitle"]} [{meta["date"]}]\n{meta["m3u8Link"]}\n'
-    with open(f"{progName}.m3u8", "w", encoding="utf-8") as f:
+    filename = f"{progName}.m3u8"
+    with open(filename, "w", encoding="utf-8") as f:
         f.write(m3u)
-    print(f"Saved {progName}.m3u8")
+    print(f"Saved {filename}")
 
 # --- Main run ---
-options = Options()
-options.add_argument("--headless")
-driver = webdriver.Chrome(options=options)
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python3 rthk_playlist.py <programme name>")
+        sys.exit(1)
 
-programmes = ["古今風雲人物", "長安的荔枝"]
-for prog in programmes:
-    generate_playlist(driver, prog)
+    progName = sys.argv[1]
 
-driver.quit()
+    options = Options()
+    options.add_argument("--headless")
+    driver = webdriver.Chrome(options=options)
+
+    generate_playlist(driver, progName)
+
+    driver.quit()
 

@@ -1,0 +1,24 @@
+<video id="player" controls width="640" height="360"></video>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script>
+const video = document.getElementById("player");
+const hls = new Hls();
+
+hls.loadSource("https://rthkvod2022.akamaized.net/mp4_hk/tv/2026/SINOCT2026L27700027.smil/master.m3u8");
+hls.attachMedia(video);
+
+hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+  console.log("Available levels:", hls.levels); // video renditions
+  console.log("Available audio tracks:", hls.audioTracks);
+
+  // Example: force a specific video quality
+  // hls.currentLevel = 0;  // lowest quality
+  hls.currentLevel = hls.levels.length - 1; // highest quality
+
+  // Example: select a specific audio track
+  hls.audioTrack = 1; // first audio track
+});
+
+</script>
+

@@ -39,7 +39,7 @@ async function fetchText(file) {
   return text;
 }
 const optionChapter = c => `<option value="${c}" ${c.startsWith(activeEpisode) ? 'selected' : ''}>${c.split(' ')[1].replaceAll('_',' ')}</option>`;
-const soundUrl = id => `https://podcasts.rthk.hk/podcast/media/people/287_${id}.mp3`;
+const soundUrl = id => `https://rthkaod2022.akamaized.net/m4a/radio/archive/radio1/People/m4a/${id}.m4a/index_0_a.m3u8`;
 const contentUrl = chapter => `text/${title}/${chapter.substring(0,3)}.txt`;
 async function myInit() {
   document.title = title;
