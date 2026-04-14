@@ -1,24 +1,70 @@
-<video id="player" controls width="640" height="360"></video>
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <title>HLS.js Popover Controls</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    #popover {
+      display: none;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      padding: 1em;
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+    }
+    #popover.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <video id="player" controls width="640" height="360"></video>
+  <button id="togglePopover">Settings</button>
 
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<script>
-const video = document.getElementById("player");
-const hls = new Hls();
+  <div id="popover" role="dialog" aria-label="Video settings">
+    <div>
+      <label for="currentLevel">畫質</label>
+      <input type="range" min="0" max="5" value="3" id="currentLevel" />
+    </div>
+    <div>
+      <label for="audioTrack">音訊</label>
+      <input type="range" min="0" max="1" value="0" id="audioTrack" aria-valuetext="粵" />
+      <span id="audioLabel">粵</span>
+    </div>
+  </div>
 
-hls.loadSource("https://rthkvod2022.akamaized.net/mp4_hk/tv/2026/SINOCT2026L27700027.smil/master.m3u8");
-hls.attachMedia(video);
+  <script>
+    const video = document.getElementById("player");
+    const hls = new Hls({ debug: true });
+    hls.loadSource("https://rthkvod2022.akamaized.net/mp4_hk/tv/2026/SINOCT2026L27700027.smil/master.m3u8");
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED, () => video.play());
 
-hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
-  console.log("Available levels:", hls.levels); // video renditions
-  console.log("Available audio tracks:", hls.audioTracks);
+    const currentLevel = document.getElementById("currentLevel");
+    const audioTrack = document.getElementById("audioTrack");
+    const audioLabel = document.getElementById("audioLabel");
 
-  // Example: force a specific video quality
-  // hls.currentLevel = 0;  // lowest quality
-  hls.currentLevel = hls.levels.length - 1; // highest quality
+    currentLevel.oninput = function () {
+      hls.currentLevel = parseInt(currentLevel.value, 10);
+    };
 
-  // Example: select a specific audio track
-  hls.audioTrack = 1; // first audio track
-});
+    audioTrack.oninput = function () {
+      const val = parseInt(audioTrack.value, 10);
+      hls.audioTrack = val;
+      const labelText = val === 0 ? "粵" : "普";
+      audioTrack.setAttribute("aria-valuetext", labelText);
+      audioLabel.textContent = labelText;
+    };
 
-</script>
+    // Popover toggle
+    const toggleBtn = document.getElementById("togglePopover");
+    const popover = document.getElementById("popover");
+    toggleBtn.addEventListener("click", () => {
+      popover.classList.toggle("show");
+    });
+  </script>
+</body>
+</html>
 
