@@ -1,0 +1,7 @@
+python3 rthk_playlist.py "香港故事"
+python3 rthk_playlist.py "香港故事 - 尾巴會說話"
+python3 rthk_playlist.py "香港故事 - 我們的漫畫家"
+python3 rthk_playlist.py "香港故事 ---近水留情"
+python3 rthk_playlist.py "香港故事-世界美食堂"
+python3 rthk_playlist.py "香港故事: 創科夢工場 2"
+python3 rthk_playlist.py "香港故事：邊境人家"
