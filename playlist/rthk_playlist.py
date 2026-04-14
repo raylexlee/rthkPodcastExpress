@@ -1,6 +1,7 @@
 import sys
 import time
 import requests
+import re
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -62,18 +63,41 @@ def get_episode_meta(ep):
     fileMatches = [m for m in html.split('"') if "master.m3u8" in m]
     m3u8Link = sorted(fileMatches)[0] if fileMatches else None
 
-    return {"date": ep["date"], "episodeTitle": episodeTitle, "m3u8Link": m3u8Link}
+    # Extract unique episode code
+    episodeCode = None
+    if m3u8Link:
+        match = re.search(r'(\d+)(?:\.m4a|\.smil)/master\.m3u8', m3u8Link)
+        if match:
+            episodeCode = match.group(1)
+
+    return {
+        "date": ep["date"],
+        "episodeTitle": episodeTitle,
+        "m3u8Link": m3u8Link,
+        "episodeCode": episodeCode
+    }
 
 def generate_playlist(driver, progName):
     episodes = search_programme(driver, progName)
+    metas = []
     seen = set()
-    m3u = "#EXTM3U\n"
+
     for ep in episodes:
         meta = get_episode_meta(ep)
-        if meta["m3u8Link"] and meta["date"] not in seen:
-            seen.add(meta["date"])
-            m3u += f'#EXTINF:0, {progName} — {meta["episodeTitle"]} [{meta["date"]}]\n{meta["m3u8Link"]}\n'
-    filename = f"{progName}.m3u8"
+        key = meta["episodeCode"]
+        if meta["m3u8Link"] and key and key not in seen:
+            seen.add(key)
+            metas.append(meta)
+
+    # Sort by episodeCode numerically
+    metas.sort(key=lambda m: int(m["episodeCode"]))
+
+    m3u = "#EXTM3U\n"
+    for meta in metas:
+        m3u += f'#EXTINF:0, {progName} — {meta["episodeTitle"]} [{meta["date"]}]\n{meta["m3u8Link"]}\n'
+
+    safeName = progName.replace(" ", "")
+    filename = f"{safeName}.m3u8"
     with open(filename, "w", encoding="utf-8") as f:
         f.write(m3u)
     print(f"Saved {filename}")
