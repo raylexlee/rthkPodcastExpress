@@ -48,26 +48,38 @@ async function main() {
     const dialog = document.getElementById("fileDialog");
     const fileInput = document.getElementById("fileInput");
 
-    // Wrap file selection in a Promise
-    const filePromise = new Promise(resolve => {
-      fileInput.addEventListener("change", e => {
-        const file = e.target.files[0];
-        if (file) {
-          resolve(file);
-          dialog.close();
-        }
-      });
+    let selectedFile = null;
+
+    fileInput.addEventListener("change", e => {
+      const file = e.target.files[0];
+      if (file) {
+        selectedFile = file;
+        dialog.close();
+      }
+    });
+
+    dialog.addEventListener("close", () => {
+      if (!selectedFile) {
+        // User closed without selecting a file
+        window.location.href = "https://github.com/raylexlee/raylexlee.github.io/tree/master/rthkPlaylist#readme";
+      }
     });
 
     dialog.showModal();
-    const file = await filePromise;
 
-    const text = await file.text();
-    const episodes = text.split("\n").filter(line => line && !line.startsWith("#"));
-    console.log("Episodes:", episodes);
+    // Wait until dialog closes and file is set
+    while (!selectedFile && dialog.open) {
+      await new Promise(r => setTimeout(r, 100));
+    }
 
-    const url = URL.createObjectURL(file);
-    player.src = url;
+    if (selectedFile) {
+      const text = await selectedFile.text();
+      const episodes = text.split("\n").filter(line => line && !line.startsWith("#"));
+      console.log("Episodes:", episodes);
+
+      const url = URL.createObjectURL(selectedFile);
+      player.src = url;
+    }
   }
 }
 
