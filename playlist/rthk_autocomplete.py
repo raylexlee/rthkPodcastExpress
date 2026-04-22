@@ -36,7 +36,7 @@ def fetch_suggestions(search_term):
             s = suggestions[i]
             name = s.text.strip()
             if name:
-                f.write(f"{search_term} {i} {sanitize_filename(name)}\n")
+                f.write(f"python3 autocomplete_rthk_gen.py {search_term} {i} {sanitize_filename(name)}\n")
                 print(name)
 
     driver.quit()

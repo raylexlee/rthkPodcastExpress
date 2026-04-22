@@ -7,9 +7,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import os
 
-def process_programme(search_term, position, safe_filename, js_path="genM3uRTHKaod.js"):
+def process_programme(search_term, position, safe_filename, js_path="genRTHKm3u8.js"):
     options = Options()
-    # remove headless if you want to see the download UI
+    options.add_argument("--headless")
+    # remove headless by commenting out if you want to see the download UI
     driver = webdriver.Chrome(options=options)
 
     driver.get("https://www.rthk.hk/archive")
@@ -34,29 +35,33 @@ def process_programme(search_term, position, safe_filename, js_path="genM3uRTHKa
         EC.presence_of_element_located((By.CSS_SELECTOR, "div#archGrid div.block.clearfix a"))
     )
 
-    # Scroll to load all episodes
-    archGrid = driver.find_element(By.ID, "archGrid")
-    last_count = 0
+    # Scroll to load all episodes (bounce scroll)
+    last_height = driver.execute_script("return document.body.scrollHeight")
     while True:
-        driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", archGrid)
-        time.sleep(2)
-        blocks = driver.find_elements(By.CSS_SELECTOR, "div#archGrid div.block.clearfix")
-        if len(blocks) == last_count:
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        time.sleep(4)
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        if new_height == last_height:
             break
-        last_count = len(blocks)
+        last_height = new_height
 
     # Inject JS to generate playlist
     with open(js_path, "r", encoding="utf-8") as f:
         js_code = f.read()
+    target_file = os.path.expanduser(f"~/Downloads/{safe_filename}.m3u8")
+    if os.path.exists(target_file):
+        os.remove(target_file)
     driver.execute_script(js_code)
 
     # Periodic check for file presence
-    target_file = f"{safe_filename}.m3u8"
     timeout = 30  # seconds
     waited = 0
     while waited < timeout:
         if os.path.exists(target_file):
             print(f"Confirmed {target_file} created.")
+            # Append to success.log
+            with open("success.log", "a", encoding="utf-8") as f:
+                f.write(sys.argv[1] + " " + sys.argv[3] + "\n")
             break
         time.sleep(2)
         waited += 2
