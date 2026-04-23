@@ -45,6 +45,16 @@ def process_programme(search_term, position, safe_filename, js_path="genRTHKm3u8
             break
         last_height = new_height
 
+    archGrid = driver.find_element(By.ID, "archGrid")
+    inner_html = driver.execute_script("return arguments[0].innerHTML;", archGrid)
+
+    if not inner_html.strip():
+        with open("error.log", "a", encoding="utf-8") as log:
+            log.write(f"No episodes found for {safe_filename} ({search_term} at position {position})\n")
+        print(f"No episodes found for {safe_filename}, logged to error.log")
+        driver.quit()
+        return
+
     # Inject JS to generate playlist
     with open(js_path, "r", encoding="utf-8") as f:
         js_code = f.read()
