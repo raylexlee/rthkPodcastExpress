@@ -1,0 +1,13 @@
+python3 findNewEpisodes.py 31看世界 14 31看世界-我家是個博物館
+python3 findNewEpisodes.py 31看世界 28 31看世界-環球釣魚大冒險
+python3 findNewEpisodes.py 音樂情人 0 音樂情人
+python3 findNewEpisodes.py 古今風雲人物 0 古今風雲人物
+python3 findNewEpisodes.py 2000 0 2000靚歌再重聚
+python3 findNewEpisodes.py 周末午夜場 0 周末午夜場
+python3 findNewEpisodes.py 舊日的足跡 0 舊日的足跡
+python3 findNewEpisodes.py 語妙天下 0 語妙天下
+python3 findNewEpisodes.py 香港故事 0 香港故事
+python3 findNewEpisodes.py 香港故事 4 香港故事-世界美食堂
+python3 findNewEpisodes.py 31看世界 35 31看世界維克托的極限清單2
+python3 findNewEpisodes.py 濾鏡 0 濾鏡
+python3 findNewEpisodes.py 長安的荔枝 0 長安的荔枝

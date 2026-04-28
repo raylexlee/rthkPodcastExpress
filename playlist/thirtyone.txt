@@ -1,36 +1,37 @@
-31看世界 - K-Pop 夢工場
-31看世界 - 鬥快去印尼
-31看世界 - 超時空尋找
-31看世界 - Gordon Ramsay 瘋味之旅 4
-31看世界 - 千年陝菜 (第二季)
-31看世界 - 大腦解碼
-31看世界 - 大熊貓雲川和鑫寶
-31看世界 - 史前系列：冰河時期 - 冰封世界
-31看世界 - 本草流芳
-31看世界 - 舌尖上的中國 (第四季)
-31看世界 - 因為遇見你
-31看世界 - 向新出發
-31看世界 - 但是還有書籍 (第一季)
-31看世界 - 但是還有書籍 (第二季)
-31看世界 - 我家是個博物館
-31看世界 - 泥的名字
-31看世界 - 珍古德的足跡
-31看世界 - 科技保育
-31看世界 - 穿越蘑菇雲的人
-31看世界 - 航拍海岸線 (第一季)
-31看世界 - 深夜潛行
-31看世界 - 淨零排放新時代
-31看世界 - 尋色中國
-31看世界 - 超級食物：豆
-31看世界 - 鄔達克
-31看世界 - 認知障礙知多少
-31看世界 - 魅力阿聯酋
-31看世界 - 養貓的人
-31看世界 – 大自然奧秘
-31看世界 – 白牛"大使"
-31看世界 – 地震偵探
-31看世界 – 我所看見的風暴
-31看世界 – 我所看見的颶風
-31看世界 – 運動科學之極限解碼
-31看世界 – 維克托的極限清單2
-31看世界 – 巔峰工程
+python3 autocomplete_rthk_gen.py 31看世界 0 31看世界-K-Pop夢工場
+python3 autocomplete_rthk_gen.py 31看世界 1 31看世界-鬥快去印尼
+python3 autocomplete_rthk_gen.py 31看世界 2 31看世界-超時空尋找
+python3 autocomplete_rthk_gen.py 31看世界 3 31看世界-GordonRamsay瘋味之旅4
+python3 autocomplete_rthk_gen.py 31看世界 4 31看世界-千年陝菜第二季
+python3 autocomplete_rthk_gen.py 31看世界 5 31看世界-大腦解碼
+python3 autocomplete_rthk_gen.py 31看世界 6 31看世界-大熊貓雲川和鑫寶
+python3 autocomplete_rthk_gen.py 31看世界 7 31看世界-史前系列冰河時期-冰封世界
+python3 autocomplete_rthk_gen.py 31看世界 8 31看世界-本草流芳
+python3 autocomplete_rthk_gen.py 31看世界 9 31看世界-舌尖上的中國第四季
+python3 autocomplete_rthk_gen.py 31看世界 10 31看世界-因為遇見你
+python3 autocomplete_rthk_gen.py 31看世界 11 31看世界-向新出發
+python3 autocomplete_rthk_gen.py 31看世界 12 31看世界-但是還有書籍第一季
+python3 autocomplete_rthk_gen.py 31看世界 13 31看世界-但是還有書籍第二季
+python3 autocomplete_rthk_gen.py 31看世界 14 31看世界-我家是個博物館
+python3 autocomplete_rthk_gen.py 31看世界 15 31看世界-泥的名字
+python3 autocomplete_rthk_gen.py 31看世界 16 31看世界-珍古德的足跡
+python3 autocomplete_rthk_gen.py 31看世界 17 31看世界-科技保育
+python3 autocomplete_rthk_gen.py 31看世界 18 31看世界-穿越蘑菇雲的人
+python3 autocomplete_rthk_gen.py 31看世界 19 31看世界-航拍海岸線第一季
+python3 autocomplete_rthk_gen.py 31看世界 20 31看世界-深夜潛行
+python3 autocomplete_rthk_gen.py 31看世界 21 31看世界-淨零排放新時代
+python3 autocomplete_rthk_gen.py 31看世界 22 31看世界-尋色中國
+python3 autocomplete_rthk_gen.py 31看世界 23 31看世界-超級食物豆
+python3 autocomplete_rthk_gen.py 31看世界 24 31看世界-鄔達克
+python3 autocomplete_rthk_gen.py 31看世界 25 31看世界-認知障礙知多少
+python3 autocomplete_rthk_gen.py 31看世界 26 31看世界-魅力阿聯酋
+python3 autocomplete_rthk_gen.py 31看世界 27 31看世界-養貓的人
+python3 autocomplete_rthk_gen.py 31看世界 28 31看世界-環球釣魚大冒險
+python3 autocomplete_rthk_gen.py 31看世界 29 31看世界大自然奧秘
+python3 autocomplete_rthk_gen.py 31看世界 30 31看世界白牛大使
+python3 autocomplete_rthk_gen.py 31看世界 31 31看世界地震偵探
+python3 autocomplete_rthk_gen.py 31看世界 32 31看世界我所看見的風暴
+python3 autocomplete_rthk_gen.py 31看世界 33 31看世界我所看見的颶風
+python3 autocomplete_rthk_gen.py 31看世界 34 31看世界運動科學之極限解碼
+python3 autocomplete_rthk_gen.py 31看世界 35 31看世界維克托的極限清單2
+python3 autocomplete_rthk_gen.py 31看世界 36 31看世界巔峰工程

@@ -1,0 +1,7 @@
+python3 autocomplete_rthk_gen.py 香港故事 0 香港故事
+python3 autocomplete_rthk_gen.py 香港故事 1 香港故事-尾巴會說話
+python3 autocomplete_rthk_gen.py 香港故事 2 香港故事-我們的漫畫家
+python3 autocomplete_rthk_gen.py 香港故事 3 香港故事---近水留情
+python3 autocomplete_rthk_gen.py 香港故事 4 香港故事-世界美食堂
+python3 autocomplete_rthk_gen.py 香港故事 5 香港故事創科夢工場2
+python3 autocomplete_rthk_gen.py 香港故事 6 香港故事邊境人家
