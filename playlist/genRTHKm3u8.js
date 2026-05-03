@@ -1,4 +1,4 @@
-function scrapeEpisodes() {
+function scrapeEpisodes(filter) {
   const archGrid = document.getElementById('archGrid');
   const anchors = archGrid.querySelectorAll('a')
   const episodes = [];
@@ -10,7 +10,12 @@ function scrapeEpisodes() {
     const d = x.split('/'); // dd/mm/yyyy
     if (d.length !== 3) return;
     const yyyymmdd = d[2] + d[1] + d[0];
-    episodes.push({date: yyyymmdd, url: fullUrl});
+    if (!filter) {
+      episodes.push({date: yyyymmdd, url: fullUrl});
+      return
+    }
+    if (fullUrl.split('/').includes(filter)) 
+      episodes.push({date: yyyymmdd, url: fullUrl});
   });
   episodes.sort((a, b) => a.date.localeCompare(b.date));
   return episodes;
@@ -55,7 +60,8 @@ async function getEpisodeMeta(ep) {
 async function generatePlaylist() {
   const s1 = document.getElementById('s1');
   const progName = s1.value.replace(/[^\w\u4e00-\u9fff-]/g,'');
-  const episodes = scrapeEpisodes();
+  const filter = ["周末午夜場","香港故事"].includes(progName) ? 'radio1' : '';
+  const episodes = scrapeEpisodes(filter);
 const metas = [];
 const seen = new Set();
 for (const ep of episodes) {
