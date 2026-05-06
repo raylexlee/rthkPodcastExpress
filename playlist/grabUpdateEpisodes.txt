@@ -10,4 +10,5 @@ python3 findNewEpisodes.py 香港故事 0 香港故事
 python3 findNewEpisodes.py 香港故事 4 香港故事-世界美食堂
 python3 findNewEpisodes.py 31看世界 35 31看世界維克托的極限清單2
 python3 findNewEpisodes.py 濾鏡 0 濾鏡
-python3 findNewEpisodes.py 長安的荔枝 0 長安的荔枝
+python3 findNewEpisodes.py 鏗鏘集 0 鏗鏘集
+python3 findNewEpisodes.py 歡樂家長群 0 歡樂家長群
