@@ -47,7 +47,7 @@ def process_programme(search_term, position, safe_filename, js_path="genRTHKm3u8
     last_height = driver.execute_script("return document.body.scrollHeight")
     while True:
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        time.sleep(4)
+        time.sleep(10)
         new_height = driver.execute_script("return document.body.scrollHeight")
         if new_height == last_height:
             break

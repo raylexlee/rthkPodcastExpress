@@ -1,0 +1,9 @@
+https://rthkaod2022.akamaized.net/m4a/radio/archive/radio1/hktoday/m4a/20260707.m4a/master.m3u8
+https://rthkaod2022.akamaized.net/m4a/radio/archive/radio1/12oclocknews/m4a/20260708.m4a/master.m3u8
+https://rthkaod2022.akamaized.net/m4a/radio/archive/radio1/6oclocknews/m4a/20260708.m4a/master.m3u8
+https://rthkaod2022.akamaized.net/m4a/radio/archive/radio1/eveningnews/m4a/20260707.m4a/master.m3u8
+https://rthkaod2022.akamaized.net/m4a/radio/archive/radio1/newspaper/m4a/20260708.m4a/master.m3u8
+hktoday 6:30-8:00
+12oclocknews 12:00-12:30
+6oclocknews 18:00-18:30
+eveningnews 22:00-22:30
