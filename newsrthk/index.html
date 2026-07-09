@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>中華五千年</title>
+  <title>昨日新聞</title>
   <link rel="stylesheet" href="store.css"> </link>
 </head>
 <body>
   <div class="viewportDiv">
     <div id="myGroupline" class="div1">
-      <div>時期</div>
+      <div>日期</div>
       <div class="select-wrapper">
         <select id="myPeriod"> </select>
       </div>
@@ -21,13 +21,13 @@
     </div>
     <div id="myBookline" class="div1">
       <div>
-        <a href="javascript:prevChapter()" style="color:cyan;">&lArr;</a> 
+        <a href="javascript:moveToPrevOption()" style="color:cyan;">&lArr;</a> 
       </div>
       <div class="select-wrapper">
         <select id="myEvent"> </select>
       </div>
       <div>
-        <a href="javascript:nextChapter()" style="color:cyan;">&rArr;</a> 
+        <a href="javascript:moveToNextOption()" style="color:cyan;">&rArr;</a> 
       </div>
     </div>
     <div class="remainingDiv">
@@ -47,11 +47,11 @@
        <a href="javascript:pauseResume()" id="myPauseCancel" style="color:red;">&#9208;</a>
       </div>
       <div id="myBookTitle">
-      中華五千年
+      昨日新聞
       </div>
     </div>
     <div id="myFootline" class="div1">
-Last updated : 6 Oct 2025
+Last updated : 9 July 2026
     </div>
   </div>
   <div id="qrcode" popover></div>
@@ -76,8 +76,7 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
     </div>
     <div>
             <audio id="audio" preload="auto" tabindex="0" controls="" type="audio/mpeg">
-              <source type="audio/mp3" src="">
-              Sorry, your browser does not support HTML5 audio.
+                <source src="" type="application/x-mpegURL">
             </audio>
     </div>
     <div>
